@@ -1,7 +1,7 @@
 ### Installation
 
 ### Clone the repository
-git clone https://github.com/ShifatNaznin/laravel-vue-inventory.git
+git clone https://github.com/ShifatNaznin/laravel-vuejs-delivery-management-system.git
 
 ### Install all the dependencies using composer
 composer install
