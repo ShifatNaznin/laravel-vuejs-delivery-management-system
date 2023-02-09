@@ -118,21 +118,21 @@
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
-                                        Employee
+                                        User
                                         <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <router-link to="/add-employee" class="nav-link">
+                                        <router-link to="/add-user" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Employee</p>
+                                            <p>Add User</p>
                                         </router-link>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="" class="nav-link">
+                                        <router-link to="/user-list" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>All Employee</p>
+                                            <p>All User</p>
                                         </router-link>
                                     </li>
                                 </ul>

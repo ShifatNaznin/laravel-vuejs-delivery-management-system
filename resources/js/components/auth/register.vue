@@ -27,6 +27,18 @@
               </div>
               <small class="text-danger" v-if="errors.email">{{errors.email[0]}}</small>
               <div class="input-group mb-3">
+              <select class="form-control select2" style="width: 100%;" v-model="form.userRole">
+                    <option>Select User Role</option>
+                    <option value="superadmin">Super Admin</option>
+                    <option value="admin">Admin</option>
+                    <option value="manager">Manager</option>
+                    <option value="zonemanager">Zone Manager</option>
+                    <option value="user">User</option>
+                    <option value="deliveryman">Delivery Man</option>
+                  </select>
+              </div>
+              <!-- <small class="text-danger" v-if="errors.email">{{errors.email[0]}}</small> -->
+              <div class="input-group mb-3">
                 <input
                   type="password"
                   class="form-control"
@@ -85,6 +97,7 @@ export default {
       form: {
         name: null,
         email: null,
+        userRole: null,
         password: null,
         confirm_password: null
       },

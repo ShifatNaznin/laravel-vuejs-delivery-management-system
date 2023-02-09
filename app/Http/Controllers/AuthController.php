@@ -103,6 +103,7 @@ class AuthController extends Controller
     }
     public function signup(Request $request)
     {
+        // return $request->all();
         $request->validate([
             'email' => 'required|unique:users|max:255',
             'name' => 'required',
@@ -112,6 +113,7 @@ class AuthController extends Controller
         $data=array();
         $data['name']= $request->name;
         $data['email']= $request->email;
+        $data['userRole']= $request->userRole;
         $data['password']= Hash::make($request->password);
         DB::table('users')->insert($data);
         return $this->login($request);
