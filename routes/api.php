@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +31,17 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
+
+});
+Route::group([
+    'namespace' => 'App\Http\Controllers',
+    'prefix' => 'user'
+
+], function ($router) {
+    Route::get('/', [UserController::class, 'index']);
+    Route::post('/store', [UserController::class, 'store']);
+    Route::post('/update/{id}', [UserController::class, 'update']);
+    Route::get('/show/{id}', [UserController::class, 'show']);
+    Route::post('/destroy/{id}', [UserController::class, 'destroy']);
 
 });

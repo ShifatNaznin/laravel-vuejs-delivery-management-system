@@ -123,12 +123,12 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <router-link to="/add-user" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add User</p>
                                         </router-link>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <router-link to="/user-list" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>

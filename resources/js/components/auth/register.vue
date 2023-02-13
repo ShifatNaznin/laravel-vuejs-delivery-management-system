@@ -27,15 +27,27 @@
               </div>
               <small class="text-danger" v-if="errors.email">{{errors.email[0]}}</small>
               <div class="input-group mb-3">
-              <select class="form-control select2" style="width: 100%;" v-model="form.userRole">
-                    <option>Select User Role</option>
-                    <option value="superadmin">Super Admin</option>
-                    <option value="admin">Admin</option>
-                    <option value="manager">Manager</option>
-                    <option value="zonemanager">Zone Manager</option>
-                    <option value="user">User</option>
-                    <option value="deliveryman">Delivery Man</option>
-                  </select>
+                <select class="form-control select2" style="width: 100%;" v-model="form.userRole">
+                  <option disabled selected>Select User Role</option>
+                  <option value="superadmin">Super Admin</option>
+                  <option value="admin">Admin</option>
+                  <option value="manager">Manager</option>
+                  <option value="zonemanager">Zone Manager</option>
+                  <option value="user">User</option>
+                  <option value="deliveryman">Delivery Man</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <select class="form-control" style="width: 100%;" v-model="form.division">
+                  <option disabled selected>Select Division</option>
+                  <option value="barisal">Barisal</option>
+                  <option value="chittagong">Chittagong</option>
+                  <option value="dhaka">Dhaka</option>
+                  <option value="khulna">Khulna</option>
+                  <option value="mymensingh">Mymensingh</option>
+                  <option value="rajshahi">Rajshahi</option>
+                  <option value="sylhet">Sylhet</option>
+                </select>
               </div>
               <!-- <small class="text-danger" v-if="errors.email">{{errors.email[0]}}</small> -->
               <div class="input-group mb-3">
@@ -98,6 +110,7 @@ export default {
         name: null,
         email: null,
         userRole: null,
+        division: null,
         password: null,
         confirm_password: null
       },
