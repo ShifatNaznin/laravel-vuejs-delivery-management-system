@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::group([
 
-    'middleware' => 'api',
+    // 'middleware' => 'auth',
     'namespace' => 'App\Http\Controllers',
     'prefix' => 'auth'
 
@@ -35,8 +35,8 @@ Route::group([
 });
 Route::group([
     'namespace' => 'App\Http\Controllers',
-    'prefix' => 'user'
-
+    'prefix' => 'user',
+    'middleware' => 'auth',
 ], function ($router) {
     Route::get('/', [UserController::class, 'index']);
     Route::get('/admin', [UserController::class, 'admin']);

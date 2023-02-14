@@ -18,7 +18,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">User Table</h3>
-
+                <button @click="check">Check</button>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 250px;">
                     <div class="input-group-append" style="padding: 5px 10px 0px 0px;">
@@ -83,6 +83,10 @@ export default {
       dataSearch: ""
     };
   },
+  created(){
+    axios.defaults.headers.common["Authorization"] = `Bearer ${window.localStorage?.token}`;
+    this.allData();
+  },
   computed: {
     filterData() {
       return this.users.filter(usersData => {
@@ -96,7 +100,12 @@ export default {
     }
   },
   methods: {
+    check(){
+      axios.defaults.headers.common["Authorization"] = `Bearer ${window.localStorage?.token}`;
+      axios.get("/api/user/")
+    },
     allData() {
+      // axios.defaults.headers.common["Authorization"] = `Bearer ${window.localStorage?.token}`;
       axios
         .get("/api/user/")
         .then(
@@ -131,9 +140,6 @@ export default {
         }
       });
     }
-  },
-  created() {
-    this.allData();
   }
 };
 </script>

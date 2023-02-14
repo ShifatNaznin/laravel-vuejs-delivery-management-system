@@ -23,24 +23,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        // return Cookie::get('mycookie');
-        // try {
-        //     $user = JWTAuth::parseToken()->authenticate();
-        // } catch (JWTException $e) {
-        //     // Something went wrong while authenticating the token
-        //     return response()->json(['error' => 'Unauthorized'], 401);
-        // }
-
-        // return response()->json(['user' => $user]);
-        // // if($user->userRole == 'superadmin'){
-        //     // return "pok";
-        //    return $data = User::orderBy('id', 'desc')->get();
-        // }
-        // if($user->userRole == 'manager'){
-
-        //     $data = User::where('userRole','zonemanager')->orderBy('id', 'desc')->get();
-        // }
-        // return response()->json($data);
+        // return Auth::user();
+        $data = User::orderBy('id', 'desc')->get();
+        return response()->json($data);
     }
     public function guard()
     {
