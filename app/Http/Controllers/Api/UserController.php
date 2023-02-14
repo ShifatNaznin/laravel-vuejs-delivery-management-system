@@ -5,18 +5,55 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('JWT');
+    // }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = User::orderBy('id', 'desc')->get();
+        // return Cookie::get('mycookie');
+        // try {
+        //     $user = JWTAuth::parseToken()->authenticate();
+        // } catch (JWTException $e) {
+        //     // Something went wrong while authenticating the token
+        //     return response()->json(['error' => 'Unauthorized'], 401);
+        // }
+
+        // return response()->json(['user' => $user]);
+        // // if($user->userRole == 'superadmin'){
+        //     // return "pok";
+        //    return $data = User::orderBy('id', 'desc')->get();
+        // }
+        // if($user->userRole == 'manager'){
+
+        //     $data = User::where('userRole','zonemanager')->orderBy('id', 'desc')->get();
+        // }
+        // return response()->json($data);
+    }
+    public function guard()
+    {
+        return Auth::guard();
+    }
+    public function admin()
+    {
+        $data = User::where('userRole','admin')->orderBy('id', 'desc')->get();
+        return response()->json($data);
+    }
+    public function manager()
+    {
+        $data = User::where('userRole','manager')->orderBy('id', 'desc')->get();
         return response()->json($data);
     }
 

@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>User List</h1>
+            <h1>Admin List</h1>
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">User Table</h3>
+                <h3 class="card-title">Admin Table</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 250px;">
@@ -98,10 +98,10 @@ export default {
   methods: {
     allData() {
       axios
-        .get("/api/user/")
+        .get("/api/user/admin/")
         .then(
           ({ data }) =>
-            console.log(data)
+            // console.log(data)
             (this.users = data)
         )
         .catch(function(error) {
