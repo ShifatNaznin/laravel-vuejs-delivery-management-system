@@ -5,7 +5,6 @@ let home = require('./components/home').default;
 let logout = require('./components/auth/logout').default;
 // let addUser = require('./components/user/create').default;
 let userList = require('./components/user/index').default;
-let adminList = require('./components/user/admin').default;
 
 export const routes = [
   { path: '/', component: login, name: '/' },
@@ -15,5 +14,4 @@ export const routes = [
   { path: '/logout', component: logout, name: 'logout' },
   // { path: '/add-user', component: addUser, name: 'addUser' },
   { path: '/user-list', component: userList, name: 'userList' },
-  { path: '/admin-list', component: adminList, name: 'adminList' },
 ]

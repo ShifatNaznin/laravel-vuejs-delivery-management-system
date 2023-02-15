@@ -17,8 +17,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">User Table</h3>
-                <button @click="check">Check</button>
+                <h3 class="card-title">User Role: {{userDet.userRole}}</h3>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 250px;">
                     <div class="input-group-append" style="padding: 5px 10px 0px 0px;">
@@ -79,6 +78,7 @@ export default {
   data() {
     return {
       users: [],
+      userDet: '',
       interval: null,
       dataSearch: ""
     };
@@ -110,8 +110,8 @@ export default {
         .get("/api/user/")
         .then(
           ({ data }) =>
-            console.log(data)
-            (this.users = data)
+            console.log(data.user)
+            (this.users = data.data,this.userDet = data.user)
         )
         .catch(function(error) {
           // console.log(error);

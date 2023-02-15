@@ -39,8 +39,6 @@ Route::group([
     'middleware' => 'auth',
 ], function ($router) {
     Route::get('/', [UserController::class, 'index']);
-    Route::get('/admin', [UserController::class, 'admin']);
-    Route::get('/manager', [UserController::class, 'manager']);
     Route::post('/store', [UserController::class, 'store']);
     Route::post('/update/{id}', [UserController::class, 'update']);
     Route::get('/show/{id}', [UserController::class, 'show']);

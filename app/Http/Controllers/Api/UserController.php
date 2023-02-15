@@ -23,23 +23,24 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        // return Auth::user();
-        $data = User::orderBy('id', 'desc')->get();
-        return response()->json($data);
-    }
-    public function guard()
-    {
-        return Auth::guard();
-    }
-    public function admin()
-    {
-        $data = User::where('userRole','admin')->orderBy('id', 'desc')->get();
-        return response()->json($data);
-    }
-    public function manager()
-    {
-        $data = User::where('userRole','manager')->orderBy('id', 'desc')->get();
-        return response()->json($data);
+        $user=Auth::user();
+        if($user->userRole == 'superadmin'){
+
+            $data = User::orderBy('id', 'desc')->get();
+        }
+        if($user->userRole == 'manager'){
+
+            $data = User::where('userRole','zonemanager')->orderBy('id', 'desc')->get();
+        }
+        if($user->userRole == 'zonemanager'){
+
+            $data = User::where('userRole','user')->orWhere('userRole','deliveryman')->orderBy('id', 'desc')->get();
+        }
+        // return response()->json($data);
+        return response()->json([
+           'data'=>$data,
+           'user'=>$user,
+        ]);
     }
 
     /**

@@ -132,8 +132,8 @@ export default {
         .catch(error => (this.errors = error.response.data.errors))
         .catch(
           Toast.fire({
-            icon: "warning",
-            title: "Invalid email or password"
+            // icon: "warning",
+            title: "Loading....."
           })
         );
     }
