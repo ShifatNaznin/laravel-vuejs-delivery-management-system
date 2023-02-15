@@ -53,10 +53,10 @@
                       <td>{{ usersData.userRole }}</td>
                       <td>{{ usersData.division }}</td>
                       <td>
-                        <router-link
+                        <!-- <router-link
                           :to="{name:'edit-data',params:{id:usersData.id} }"
                           class="btn btn-sm btn-success"
-                        >Edit</router-link>
+                        >Edit</router-link> -->
                         <a @click="deleteData(usersData.id)" class="btn btn-sm btn-danger">Delete</a>
                       </td>
                     </tr>

@@ -12,7 +12,7 @@
                 <input type="text" class="form-control" placeholder="Full Name" v-model="form.name" />
                 <div class="input-group-append">
                   <div class="input-group-text">
-                    <span class="fas fa-envelope"></span>
+                    <!-- <span class="fas fa-envelope"></span> -->
                   </div>
                 </div>
               </div>

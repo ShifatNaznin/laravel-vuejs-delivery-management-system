@@ -36926,9 +36926,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
-      _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-envelope" }),
-      ]),
+      _c("div", { staticClass: "input-group-text" }),
     ])
   },
   function () {
@@ -37155,38 +37153,20 @@ var render = function () {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(usersData.division))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "btn btn-sm btn-success",
-                                attrs: {
-                                  to: {
-                                    name: "edit-data",
-                                    params: { id: usersData.id },
-                                  },
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-sm btn-danger",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.deleteData(usersData.id)
                                 },
                               },
-                              [_vm._v("Edit")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "btn btn-sm btn-danger",
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.deleteData(usersData.id)
-                                  },
-                                },
-                              },
-                              [_vm._v("Delete")]
-                            ),
-                          ],
-                          1
-                        ),
+                            },
+                            [_vm._v("Delete")]
+                          ),
+                        ]),
                       ])
                     }),
                     0
