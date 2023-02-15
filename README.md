@@ -21,7 +21,7 @@ DB_USERNAME=your_user_name <br>
 DB_PASSWORD=your_password
 
 ### command for Generate JWT secret key
-Generate secret key
+php artisan jwt:secret
 
 ### For Database create
 php artisan migrate
