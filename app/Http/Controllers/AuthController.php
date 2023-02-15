@@ -118,6 +118,11 @@ class AuthController extends Controller
         $data['division']= $request->division;
         $data['password']= Hash::make($request->password);
         DB::table('users')->insert($data);
+        Mail::send('welcome_email', $data, function ($message) use ($data) {
+            $message->to($data['email'], $data['name'])
+                ->subject('Welcome to Delivery Management System')
+                ->from('info@gmail.com', 'Delivery Management System');
+        });
         return $this->login($request);
     }
 }
