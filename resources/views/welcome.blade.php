@@ -44,7 +44,7 @@
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light" id="topbar"
                 style="display: none;"
-                v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forget-password'? false:true">
+                v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/welcome'? false:true">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -71,7 +71,7 @@
 
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4" id="sidebar" style="display: none;"
-                v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/forget-password'? false:true">
+                v-show="$route.path === '/' || $route.path === '/register' || $route.path === '/welcome'? false:true">
                 <!-- Brand Logo -->
                 <router-link to="/" class="brand-link">
                     <img src="{{ asset('admin/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
@@ -119,7 +119,7 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper" id="content"
-                :style="[$route.path === '/' || $route.path === '/register'|| $route.path === '/forget-password' ? {'background-color': '#ffffff'} : {'background-color': '#f4f6f9'}]">
+                :style="[$route.path === '/' || $route.path === '/register'|| $route.path === '/welcome' ? {'background-color': '#ffffff'} : {'background-color': '#f4f6f9'}]">
 
                 <router-view></router-view>
             </div>

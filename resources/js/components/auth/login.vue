@@ -47,9 +47,9 @@
             </form>
             <!-- /.social-auth-links -->
             <div class="new-margin">
-              <p class="text-center mb-1">
+              <!-- <p class="text-center mb-1">
                 <router-link to="/forget-password">Forgot Password</router-link>
-              </p>
+              </p> -->
               <p class="text-center mb-0">
                 <router-link to="/register">Register a new membership</router-link>
               </p>
@@ -82,12 +82,18 @@ export default {
       axios
         .post("/api/auth/login", this.form)
         .then(response => {
-          User.reponseAfterLogin(response);
-          Toast.fire({
-            icon: "success",
-            title: "Signed in successfully"
-          });
-          this.$router.push({ name: "home" });
+          console.log(response);
+
+          if (response.data === "deliveryman") {
+            this.$router.push({ name: "forget" });
+          } else {
+            User.reponseAfterLogin(response);
+            Toast.fire({
+              icon: "success",
+              title: "Signed in successfully"
+            });
+            this.$router.push({ name: "home" });
+          }
         })
         // .catch(error => (this.errors = error.response.data.errors));
         .catch(

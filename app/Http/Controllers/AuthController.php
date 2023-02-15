@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,9 +35,15 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
         $credentials = $request->only('email', 'password');
-
+         
         if ($token = $this->guard()->attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $user=User::where('email',$request->email)->first();
+            if($user->userRole == 'deliveryman'){
+                return response()->json('deliveryman');
+            }else{
+                return $this->respondWithToken($token);
+
+            }
         }
 
         return response()->json(['error' => 'Email or Password Invalid'], 401);

@@ -36,6 +36,10 @@ class UserController extends Controller
 
             $data = User::where('userRole','user')->orWhere('userRole','deliveryman')->orderBy('id', 'desc')->get();
         }
+        if($user->userRole == 'user'){
+
+            $data = User::where('id',$user->id)->orderBy('id', 'desc')->get();
+        }
         // return response()->json($data);
         return response()->json([
            'data'=>$data,
