@@ -85,7 +85,7 @@ export default {
           console.log(response);
 
           if (response.data === "deliveryman") {
-            this.$router.push({ name: "forget" });
+            this.$router.push({ name: "welcome" });
           } else {
             User.reponseAfterLogin(response);
             Toast.fire({

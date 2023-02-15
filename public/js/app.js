@@ -5401,7 +5401,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response);
         if (response.data === "deliveryman") {
           _this.$router.push({
-            name: "forget"
+            name: "welcome"
           });
         } else {
           User.reponseAfterLogin(response);
